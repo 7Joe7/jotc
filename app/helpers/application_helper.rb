@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  BASE_TITLE = 'Ruby on Rails Tutorial Sample App'
+  BASE_TITLE = 'JOTC'
 
   def full_title(specific_title)
     if specific_title

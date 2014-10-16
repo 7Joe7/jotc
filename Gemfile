@@ -1,29 +1,24 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
-
 gem 'rails', '4.1.5'
 gem 'bootstrap-sass'
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'rspec-rails'
-end
-
-group :test do
-  gem 'selenium-webdriver'
-  gem 'capybara'
-end
-
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'sdoc', group: :doc
 
-group :doc do
-  gem 'sdoc', '0.3.20', require: false
+group :test do
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard-minitest'
+end
+
+group :development do
+  gem 'sqlite3'
+  gem 'spring'
 end
 
 group :production do

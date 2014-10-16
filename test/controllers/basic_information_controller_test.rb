@@ -2,8 +2,6 @@ require 'test_helper'
 
 class BasicInformationControllerTest < ActionController::TestCase
 
-  BASE_TITLE = 'JOTC'
-
   test 'should get home' do
     get :home
     assert_response :success

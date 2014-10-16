@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'signup' => 'users#new'
+
   root 'basic_information#home'
 
-  get 'basic_information/contact'
+  get 'contact' => 'basic_information#contact'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

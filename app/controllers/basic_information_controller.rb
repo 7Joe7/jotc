@@ -4,6 +4,6 @@ class BasicInformationController < ApplicationController
   end
 
   def contact
-    
+
   end
 end

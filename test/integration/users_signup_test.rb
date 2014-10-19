@@ -13,9 +13,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     get signup_path
     password = 'foobar'
     assert_difference 'User.count', 1 do
-      post_via_redirect signup_path, user: {name: 'user', email: 'user@valid.com', password: password,
+      post_via_redirect users_path, user: {name: 'user', email: 'user@valid.com', password: password,
                                             password_confirmation: password }
     end
-    assert_template 'user/show'
+    assert_template 'users/show'
   end
 end

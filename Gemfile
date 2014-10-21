@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'
 gem 'bcrypt'
-# gem 'byebug'
+gem 'byebug'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'uglifier'

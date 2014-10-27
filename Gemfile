@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'
 gem 'bcrypt'
-gem 'byebug'
+# gem 'byebug'
 gem 'bootstrap-sass'
 gem 'sass-rails'
 gem 'uglifier'
@@ -10,6 +10,9 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'sdoc', group: :doc
 
 group :test do

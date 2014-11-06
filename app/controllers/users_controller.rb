@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def destroy
     User.find(params[:id]).destroy
-    flash[:success] = "User deleted"
+    flash[:success] = 'User deleted'
     redirect_to users_url
   end
 
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     redirect_to root_url unless @user.activated?
+    @messages = @user.messages.paginate(page: params[:page])
   end
 
   def create
@@ -28,10 +29,6 @@ class UsersController < ApplicationController
       @user.send_activation_email
       flash[:info] = 'Please check your email to activate your account.'
       redirect_to root_url
-
-      # log_in @user
-      # flash[:success] = 'Welcome to the JOTC!'
-      # redirect_to @user
     else
       render 'new'
     end
@@ -55,15 +52,6 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-
-  # Confirms a logged-in user.
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = 'Please log in.'
-      redirect_to login_url
-    end
   end
 
   # Confirms the correct user.

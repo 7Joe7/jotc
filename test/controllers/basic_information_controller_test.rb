@@ -20,10 +20,10 @@ class BasicInformationControllerTest < ActionController::TestCase
   #   assert_select 'title', "#{BASE_TITLE} | About Us"
   # end
 
-  test 'should get contact' do
-    get :contact
-    assert_response :success
-    assert_select 'title', "#{BASE_TITLE} | Contact"
-  end
+  # test 'should get contact' do
+  #   get :contact
+  #   assert_response :success
+  #   assert_select 'title', "#{BASE_TITLE} | Contact"
+  # end
 
 end

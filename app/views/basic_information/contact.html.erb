@@ -1,6 +1,7 @@
 <% provide(:title, 'Contact') %>
 <div class="row">
-    <aside class="col-md-4">
+    <div class="span4">ahoj</div>
+    <div class="span12">
         <% if logged_in? %>
             <section class="user_info">
                 <%= render 'shared/user_info' %>
@@ -9,6 +10,6 @@
         <section class="message_form">
             <%= render 'shared/message_form' %>
         </section>
-    </aside>
+    </div>
 </div>
 

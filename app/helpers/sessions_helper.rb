@@ -57,6 +57,10 @@ module SessionsHelper
     session[:forwarding_url] = request.url if request.get?
   end
 
+  def store_sphere(sphere)
+    session[:sphere] = sphere if request.get?
+  end
+
   # Returns true if the given user is the current user.
   def current_user?(user)
     user == current_user

@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
 
   def new
-    @message = logged_in? ? current_user.messages.build : Message.new
+    get_message
   end
 
   def create
@@ -16,11 +16,5 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-  end
-  
-  private
-
-  def message_params
-    params.require(:message).permit(:content, :email)
   end
 end

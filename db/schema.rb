@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105210834) do
+ActiveRecord::Schema.define(version: 20141229171149) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -24,6 +24,29 @@ ActiveRecord::Schema.define(version: 20141105210834) do
   add_index "messages", ["email", "created_at"], name: "index_messages_on_email_and_created_at"
   add_index "messages", ["user_id", "created_at"], name: "index_messages_on_user_id_and_created_at"
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
+
+  create_table "news", force: true do |t|
+    t.string   "content"
+    t.integer  "author_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.integer  "sphere"
+  end
+
+  add_index "news", ["author_id"], name: "index_news_on_author_id"
+
+  create_table "reservations", force: true do |t|
+    t.datetime "time_from"
+    t.datetime "time_to"
+    t.integer  "user_id"
+    t.string   "place"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "repeat"
+  end
+
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -38,6 +61,7 @@ ActiveRecord::Schema.define(version: 20141105210834) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "place"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,0 +1,31 @@
+- provide(:title, 'Reservation')
+- provide(:sphere, 'Lessons')
+.row.reservations
+  - if @user && @user.reservations.any?
+    .col-md-8
+      h3 Reservations (#{@user.reservations.count})
+      ol.reservations
+        == render @reservations
+      = will_paginate @reservations
+  table
+    thead
+      tr.row
+        th.am-heading.am-pm colspan="#{am_times_count}" a.m.
+        th.pm-heading.am-pm colspan="#{pm_times_count}" p.m.
+      tr
+        th
+        - am_times_count.times do |i|
+          th.am-heading.col-heading
+            = am_time(i)
+        - pm_times_count.times do |i|
+          th.pm-heading.col-heading
+            = pm_time(i)
+    tbody
+      - 14.times do |i|
+        tr.day-line
+          th.day-heading
+            .day-description
+              = day_description(i)
+            .date-description
+              = date_description(i)
+          td.day-time colspan="#{times_supported_count}"

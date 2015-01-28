@@ -14,4 +14,12 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
+
+  def get_message
+    @message = logged_in? ? current_user.messages.build : Message.new
+  end
+
+  def message_params
+    params.require(:message).permit(:content, :email)
+  end
 end

@@ -1,0 +1,10 @@
+.row
+  aside
+    section.message_form.pull-left.contact-text.visible-content
+      == render get_message_kind
+  aside.visible-content.col-md-4.pull-right.contact-form
+    - if logged_in?
+      section.user_info
+        == render 'shared/user_info'
+    section.message_form
+      == render 'messages/message_form'

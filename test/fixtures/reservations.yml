@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time_from: 2014-11-08 18:09:18
+  time_to: 2014-11-08 19:09:18
+  user: joe
+  place: Revolucni 12
+
+two:
+  time_from: 2014-11-08 17:09:18
+  time_to: 2014-11-08 18:09:18
+  user: joe
+  place: Kah 15
+
+<% 30.times do |n| %>
+reservation_<%= n %>:
+  time_from: <%= Time.now + 10800 + n * 3600 %>
+  time_to: <%= Time.now + 10800 + (1 + n) * 3600 %>
+  user: joe
+  place: <%= Faker::Lorem.sentence(5) %>
+<% end %>

@@ -1,7 +1,7 @@
 class Message < ActiveRecord::Base
   belongs_to :user
 
-  default_scope -> { order('created_at DESC') }
+  default_scope -> { order(created_at: :desc) }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :content, presence: true, length: {maximum: 2000}

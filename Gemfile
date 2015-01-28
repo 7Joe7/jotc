@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.5'
 gem 'bcrypt'
+gem 'slim'
+gem 'slim-rails'
 # gem 'byebug'
 gem 'bootstrap-sass'
 gem 'sass-rails'
@@ -19,11 +21,18 @@ group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
   gem 'guard-minitest'
+  gem 'shoulda'
+  gem 'mocha'
+  gem 'capybara'
 end
 
 group :development do
   gem 'sqlite3'
   gem 'spring'
+end
+
+group :development, :test do
+  gem 'factory_girl_rails'
 end
 
 group :production do

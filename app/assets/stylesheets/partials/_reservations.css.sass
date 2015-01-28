@@ -1,0 +1,46 @@
+.reservations
+  background-color: transparent
+  .day-heading
+    padding-left: 5px
+    color: $writing-color
+    .date-description
+      text-align: right
+      padding-right: 5px
+  .day-line
+    border-collapse: collapse
+    position: relative
+    &:first-of-type
+      border-top-left-radius: $border-radius
+    &:last-of-type
+      border-bottom-left-radius: $border-radius
+    &:nth-child(even)
+      background-color: $bit-transparent-red
+    &:nth-child(odd)
+      background-color: $bit-transparent-black
+  #mouse-selection
+    background-color: #000
+    color: $writing-color
+    border-radius: $border-radius
+    position: absolute
+    top: 0
+    height: 100%
+    text-align: center
+  .am-heading, .pm-heading
+    text-align: left
+    padding-left: 5px
+    width: 6.5%
+    color: $writing-color
+  .am-heading
+    background: $bit-transparent-red
+  .pm-heading
+    background: $bit-transparent-black
+  .am-pm
+    text-align: center
+  thead
+    th:first-of-type
+      border-top-left-radius: $border-radius
+    th:last-of-type
+      border-top-right-radius: $border-radius
+  tbody
+    td
+      background-color: rgba(#fff, $transparency-measure)

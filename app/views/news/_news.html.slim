@@ -1,0 +1,6 @@
+li.news.visible-content
+  - if news.author
+    = gravatar_for news.author, size: 50
+  a.no-style href="#{news}"
+    h4 #{news.name}, #{news.created_at.to_s(:short)}
+    p #{news_beginning(news.content)}

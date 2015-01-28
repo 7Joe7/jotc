@@ -1,0 +1,65 @@
+header.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    nav
+      ul.nav.pull-left
+        li #{link_to 'JOTC', root_path, id: 'logo'}
+      ul.nav.navbar-nav.pull-right
+        - if yield(:sphere) == 'Lessons' || yield(:sphere) == 'Chess'
+          li #{link_to 'Home', lessons_path}
+          li #{link_to 'Reservations', lessons_reservations_path}
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" Chess
+            ul.dropdown-menu
+              li #{link_to 'Tactics', lessons_chess_tactics_path}
+              li #{link_to 'Famous Games', lessons_chess_famous_games_path}
+              li #{link_to 'Suggestions', lessons_chess_suggestions_path}
+          li #{link_to 'Price-list', lessons_price_list_path}
+          li #{link_to 'Links', lessons_links_path}
+          li #{link_to 'Learning Concepts', lessons_learning_concepts_path}
+        - elsif yield(:sphere) == 'Software'
+          li #{link_to 'Home', software_path}
+          li #{link_to 'Examples', software_examples_path}
+        - else
+          li #{link_to 'Software', software_path}
+          li #{link_to 'Lessons', lessons_path}
+        - if logged_in?
+          li #{link_to 'Users', users_path}
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown" Account
+            ul.dropdown-menu
+              li #{link_to 'Profile', current_user}
+              li #{link_to 'Settings', edit_user_path(current_user)}
+              li.divider
+              li #{link_to 'Log out', logout_path, method: 'delete'}
+        - else
+          /li.dropdown
+          /  a.dropdown-toggle href="#" data-toggle="dropdown" Log In
+          /  ul.dropdown-menu.log-in
+          /    li
+          /      = form_for(:session, url: login_path) do |f|
+          /        = f.label :email
+          /        = f.text_field :email
+          /        = f.label :password
+          /        = link_to '(forgot password)', new_password_reset_path
+          /        = f.password_field :password
+          /        = f.label :remember_me, class: 'checkbox inline' do
+          /          = f.check_box :remember_me
+          /          span Remember me
+          /        = f.submit 'Log In', class: 'btn btn-primary'
+          /li.dropdown
+          /  a.dropdown-toggle href="#" data-toggle="dropdown" Sign Up
+          /  ul.dropdown-menu.log-in
+          /    li
+          /      = form_for(@user) do |f|
+          /        = f.label :name
+          /        = f.text_field :name, class: 'form-control'
+          /        = f.label :email
+          /        = f.text_field :email, class: 'form-control'
+          /        = f.label :place
+          /        = f.text_field :place, class: 'form-control'
+          /        = f.label :password
+          /        = f.password_field :password, class: 'form-control'
+          /        = f.label :password_confirmation, 'Confirmation'
+          /        = f.password_field :password_confirmation, class: 'form-control'
+          /        = f.submit 'Create my account', class: 'btn btn-primary'
+

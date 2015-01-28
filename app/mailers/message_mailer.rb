@@ -1,4 +1,5 @@
 class MessageMailer < ActionMailer::Base
+  JOT_CHESS_MAIL = 'josef.erneker@gmail.com'
   JOT_MAIL = 'jot.company@gmail.com'
   default from: JOT_MAIL
 
@@ -21,4 +22,6 @@ class MessageMailer < ActionMailer::Base
     @message = message
     mail to: JOT_MAIL, subject: 'New message'
   end
+
+
 end

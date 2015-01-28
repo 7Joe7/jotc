@@ -1,0 +1,113 @@
+html
+  overflow-y: scroll
+
+body
+  padding-top: 60px
+
+section
+  overflow: auto
+
+textarea
+  resize: vertical
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1
+
+h1
+  font-size: 3em
+  letter-spacing: -2px
+  margin-bottom: 30px
+  text-align: center
+  color: #777
+
+h2
+  font-size: 1.2em
+  letter-spacing: -1px
+  margin-bottom: 30px
+  text-align: center
+  font-weight: normal
+  color: #999
+
+p
+  font-size: 1.1em
+  line-height: 1.7em
+
+table
+  width: 100%
+
+.price-list
+  color: $header-color
+
+.table-comments
+  //color: $header-color
+  //font-size:
+
+.center
+  text-align: center
+  h1
+    margin-bottom: 10px
+
+@each $sphere in $spheres
+  .#{$sphere}
+    +background("#{$sphere}.jpg")
+
+.pagination
+  margin: 7px auto
+
+.question
+  text-decoration: underline
+
+.suggestion
+  list-style: none
+  color: $header-color
+  font-size: 1.2em
+  .suggestion-text
+    color: $writing-color
+
+
+.visible-content
+  background: $bit-transparent-black
+  padding: 5px 10px
+  border-radius: $border-radius
+  margin-bottom: 5px
+  border: $base-border
+  +visible-writing
+  h4
+    font-size: 22px
+    color: $header-color
+    padding-left: 1em
+  textarea
+    +visible-writing(16px, #000)
+  &:first-child
+    margin-top: 25px
+  &:last-child
+    margin-bottom: 25px
+
+.log-in
+  width: 250px
+  li
+    font-size: 1.2em
+    color: #fff
+    margin: 7px
+  input
+    color: #000
+  input.btn-primary
+    color: #fff
+
+.btn-primary
+  background-color: deepskyblue
+  &:hover
+    background-color: lightseagreen
+
+.news
+  list-style: none
+  padding-left: 0
+  margin-bottom: 15px
+  li
+    border: $base-border
+    padding-left: 10px
+  a.no-style
+    color: $writing-color
+    &:hover
+      color: darken($writing-color, 20%)
+      text-decoration: none

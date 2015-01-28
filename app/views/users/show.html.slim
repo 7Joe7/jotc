@@ -1,0 +1,13 @@
+- provide(:title, @user.name)
+.row
+  aside.col-md-4
+    section.user_info
+      h1
+        = gravatar_for @user
+        = @user.name
+  .col-md-8
+    - if @user.messages.any?
+      h3 Messages (#{@user.messages.count})
+      ol.messages
+        == render @messages
+      = will_paginate @messages

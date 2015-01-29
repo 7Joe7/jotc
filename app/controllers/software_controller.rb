@@ -1,6 +1,6 @@
 class SoftwareController < ApplicationController
   def home
-    @news = News.where('sphere % 2 == 0').paginate(page: params[:page])
+    @news = News.where('sphere % 2 = 0').paginate(page: params[:page])
   end
 
   def contact

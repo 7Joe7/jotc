@@ -1,4 +1,7 @@
 Rails.application.configure do
+
+  config.assets.compress = true
+
   # Settings specified here will take precedence over those in config/application.rb.
   # Code is not reloaded between requests.
   config.cache_classes = true

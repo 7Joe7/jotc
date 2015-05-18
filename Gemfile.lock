@@ -72,6 +72,10 @@ GEM
     guard-minitest (2.3.2)
       guard (~> 2.0)
       minitest (>= 3.0)
+    heroku_rails_deflate (1.0.3)
+      actionpack (>= 3.2.13)
+      activesupport (>= 3.2.13)
+      rack (>= 1.4.5)
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.7.0)
@@ -220,6 +224,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   guard-minitest
+  heroku_rails_deflate
   jbuilder
   jquery-rails
   mini_backtrace

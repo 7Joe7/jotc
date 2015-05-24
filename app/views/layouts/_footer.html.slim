@@ -1,9 +1,6 @@
 footer.navbar.navbar-fixed-bottom.navbar-inverse
   .container
     nav
-      ul.nav.navbar-nav.pull-left
-        li #{link_to 'Report bug', crossroads_report_bug_path}
-        li #{link_to 'Feedback', crossroads_feedback_path}
       ul.nav.navbar-nav.pull-right
         - if yield(:sphere) == 'Teaching' || yield(:sphere) == 'Chess'
           li #{link_to 'About', lessons_about_path}

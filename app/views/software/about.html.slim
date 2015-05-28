@@ -1,34 +1,13 @@
 - provide(:title, 'About')
-- provide(:sphere, 'Software')
 .visible-content
-  h4 Welcome!!
-  p I am glad you found this site and visited! :-). I am Josef Erneker, nickname Joe, in Czech you also may call me Pepa.
-  p.question Who am I?
-  p I am a programmer interested in many other fields also. For me programming was always just a way to enhance
-    efficiency of work.
-  p You may find information about me on
-      #{link_to 'LinkedIn', 'cz.linkedin.com/pub/josef-erneker/45/966/80b/'} or
-      #{link_to 'facebook', 'https://www.facebook.com/josef.erneker'}.
-      If you would like to know something, please, #{link_to 'contact me', teaching_contact_path}!
-  p.question What is the idea?
-  p I worked so far for two IT firms and I made some projects of mine. In the second firm I used
-    my attitude and knowledge to enhance the working process by far, from unofficial guess I saved 25 percent of usual
-    working cycle of my team after being there half a year. 25 Percent sounds daring anyway from my perspective it is
-    a humble guess and I know more would be possible. How? By creating a software which is capable of creating another
-    software way faster than a programmer alone would be able to. Surprisingly it didn't include any high math, super
-    secret knowledge or anything that a young guy with normal IT education wouldn't know. The idea though
-    the attitude and the hard work to make it happen although nobody thought it is possible was decisive. What is the
-    best about it, it applies to all computer work, whatever you do repeatedly may be "refactored",
-    see #{link_to 'the examples', software_examples_path} to get to know more.
-
-  // rewrite
+  == render 'shared/welcome_text'
   p.question What may be of interest for you here?
-  p Generally lessons for kids and adults.
-        My primary field of teaching has been chess. Anyway it has happened that I teach in more fields now. I prefer technical fields but
-        there is no limit as long as I know the matter and have a good guideline aside.
+  p Generally custom-made software. Anything from small automation scripts, professional installers to some robust Java projects.
   p.question What is this site?
-  p This site is a helper to my teaching activities. You may find here under reservations my synchronised
-      calendar where you may set a meeting very efficiently. Under Chess you may find topical tactics tasks and some
-      famous games with commentary. There is also a price-list for private lessons. List of links I find very interesting.
-      If you are content with me and my services and would find yourself in a situation for a custom-made software,
-      check the #{link_to 'brother of this site', software_path}.
+  p This site is a presentation of our software offer. It is the software supporting subsection of #{link_to 'JOT website', root_path}.
+    You may see what that is about #{link_to 'here', crossroads_about_path}.
+  p.question What is the beginning idea?
+  p By easy and gradual automation we all may save very significant amount of time in the long run.
+  / p.question Let's see? TODO enable when ready
+  / p See #{link_to 'the examples', software_examples_path} to get to know more.
+  == render 'shared/who_am_i_text'

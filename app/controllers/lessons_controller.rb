@@ -11,14 +11,11 @@ class LessonsController < ApplicationController
   end
 
   def links
-
   end
 
   def price_list
-
   end
 
   def learning_concepts
-
   end
 end

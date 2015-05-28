@@ -1,19 +1,21 @@
 - provide(:title, 'Famous Games')
-- provide(:sphere, 'Lessons')
-table.board-table
-  - ranks.each do |rank|
-    tr
-      td.label.rank #{rank}
-      - files.each do |file|
-        /- position = "#{file}#{rank}"
-        = p = match.board["#{file}#{rank}"]
-        td.piece-container<%= position %>" id="<%= position %>">
-        - if p
-          img src="#{image_source_of(p)}" id="#{p.board_id}" alt="#{p.abbrev}"
-        - else
-          = image_path '/images/spacer.gif', height: 35, width: 35
-      - if rank==ranks[7]
-        tr
-          td.rank.file &nbsp;
-          - files.each do |file|
-            td.label.file #{file}
+.visible-content
+  h4 This page is under development
+  p Please, excuse the inconvenience for now
+/table.board-table
+/  - ranks.each do |rank|
+/    tr
+/      td.label.rank #{rank}
+/      - files.each do |file|
+/        /- position = "#{file}#{rank}"
+/        = p = match.board["#{file}#{rank}"]
+/        td.piece-container<%= position %>" id="<%= position %>">
+/        - if p
+/          img src="#{image_source_of(p)}" id="#{p.board_id}" alt="#{p.abbrev}"
+/        - else
+/          = image_path '/images/spacer.gif', height: 35, width: 35
+/      - if rank==ranks[7]
+/        tr
+/          td.rank.file &nbsp;
+/          - files.each do |file|
+/            td.label.file #{file}

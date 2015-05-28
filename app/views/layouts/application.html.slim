@@ -1,14 +1,14 @@
 doctype html
 html
   head
-    title #{full_title(yield(:title), yield(:sphere))}
+    title #{full_title(yield(:title))}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
     == render 'layouts/shim'
-  body class="#{get_body_class || yield(:sphere).downcase}"
+  body class="#{get_sphere}"
     == render 'layouts/header'
-    .container
+    .container.main
       - flash.each do |message_type, message|
         = content_tag(:div, message, class: "alert alert-#{message_type}")
       == yield

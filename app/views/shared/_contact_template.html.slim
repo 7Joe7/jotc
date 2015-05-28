@@ -1,0 +1,21 @@
+- provide(:title, 'Contact')
+.row
+  aside
+    section.pull-left.visible-content.contact-text
+      p Contact us, we will welcome any demand, feedback, idea, suggestion.
+      br
+      p If you prefer other means of communication:
+      p.double-tabbed-paragraph Email: jot.company@gmail.com
+      p.double-tabbed-paragraph Mobile: +420 723 172 832
+    section.pull-right.visible-content.contact-form
+      = form_for(@message) do |f|
+        = render 'shared/error_messages', object: f.object
+        .field
+        - if logged_in?
+          section.user_info
+            == render 'shared/user_info'
+        - else
+          = f.label :email
+          = f.text_field :email, class: 'form-control'
+        = f.text_area :content, placeholder: 'Compose message...'
+        = f.submit 'Post', class: 'btn btn-primary'

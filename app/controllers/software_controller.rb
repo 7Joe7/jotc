@@ -4,6 +4,7 @@ class SoftwareController < ApplicationController
   end
 
   def contact
+    get_message
   end
 
   def about

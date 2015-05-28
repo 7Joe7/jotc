@@ -2,24 +2,26 @@ header.navbar.navbar-fixed-top.navbar-inverse
   .container
     nav
       ul.nav.pull-left
-        li #{link_to 'JOTC', root_path, id: 'logo'}
+        li #{link_to 'JOT', root_path, id: 'logo'}
       ul.nav.navbar-nav.pull-right
-        - if yield(:sphere) == 'Lessons' || yield(:sphere) == 'Chess'
+        - sphere = get_sphere
+        - if sphere == 'lessons'
           li #{link_to 'Home', lessons_path}
-          li #{link_to 'Reservations', lessons_reservations_path}
+          /li #{link_to 'Reservations', lessons_reservations_path} TODO finish
           li.dropdown
             a.dropdown-toggle href="#" data-toggle="dropdown" Chess
             ul.dropdown-menu
-              li #{link_to 'Tactics', lessons_chess_tactics_path}
-              li #{link_to 'Famous Games', lessons_chess_famous_games_path}
-              li #{link_to 'Suggestions', lessons_chess_suggestions_path}
-          li #{link_to 'Price-list', lessons_price_list_path}
+              /li #{link_to 'Tactics', lessons_chess_tactics_path} TODO finish
+              /li #{link_to 'Famous Games', lessons_chess_famous_games_path} TODO finish
+              li #{link_to 'Tips', lessons_chess_tips_path}
+          /li #{link_to 'Price-list', lessons_price_list_path} TODO revise
           li #{link_to 'Links', lessons_links_path}
           li #{link_to 'Learning Concepts', lessons_learning_concepts_path}
-        - elsif yield(:sphere) == 'Software'
+        - elsif sphere == 'software'
           li #{link_to 'Home', software_path}
-          li #{link_to 'Examples', software_examples_path}
+          / li #{link_to 'Examples', software_examples_path} TODO finish
         - else
+          li #{link_to 'Home', root_path}
           li #{link_to 'Software', software_path}
           li #{link_to 'Lessons', lessons_path}
         - if logged_in?

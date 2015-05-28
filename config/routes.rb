@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
-  get 'chess/tactics'
-
-  get 'chess/famous_games'
 
   root 'crossroads#home'
-  get 'crossroads/feedback'
-  get 'crossroads/report_bug'
   get 'crossroads/about'
   get 'crossroads/contact'
+  post 'crossroads/contact'
 
   get 'lessons' => 'lessons#home'
   get 'lessons/links'
@@ -21,7 +17,7 @@ Rails.application.routes.draw do
   get 'lessons/price_list'
   get 'lessons/chess/famous_games' => 'chess#famous_games'
   get 'lessons/chess/tactics' => 'chess#tactics'
-  get 'lessons/chess/suggestions' => 'chess#suggestions'
+  get 'lessons/chess/tips' => 'chess#tips'
   get 'lessons/learning_concepts'
 
   get 'software/about'

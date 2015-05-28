@@ -5,7 +5,7 @@ class ChessController < ApplicationController
   def famous_games
   end
 
-  def suggestions
+  def tips
 
   end
 end

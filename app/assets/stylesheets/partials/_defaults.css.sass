@@ -31,9 +31,13 @@ h2
 p
   font-size: 1.1em
   line-height: 1.7em
+  padding-left: 0.5em
 
 table
   width: 100%
+
+.container.main
+  margin-bottom: 50px
 
 .price-list
   color: $header-color
@@ -71,15 +75,14 @@ table
   border-radius: $border-radius
   margin-bottom: 5px
   border: $base-border
+  margin-top: 25px
   +visible-writing
   h4
     font-size: 22px
     color: $header-color
-    padding-left: 1em
+    padding-left: 1.2em
   textarea
     +visible-writing(16px, #000)
-  &:first-child
-    margin-top: 25px
   &:last-child
     margin-bottom: 25px
 
@@ -103,11 +106,9 @@ table
   list-style: none
   padding-left: 0
   margin-bottom: 15px
+  font-size: 1.2em
   li
     border: $base-border
-    padding-left: 10px
+    padding-left: 0.5em
   a.no-style
-    color: $writing-color
-    &:hover
-      color: darken($writing-color, 20%)
-      text-decoration: none
+    +anchor($writing-color)

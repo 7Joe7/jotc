@@ -1,8 +1,9 @@
 module ApplicationHelper
 
-  BASE_TITLE = 'JOTC'
+  BASE_TITLE = 'JOT'
 
-  def full_title(title, sphere)
+  def full_title(title)
+    sphere = get_sphere.capitalize
     if !title.blank? && !sphere.blank?
       "#{BASE_TITLE} | #{sphere} | #{title}"
     elsif !title.blank? || !sphere.blank?
@@ -13,11 +14,14 @@ module ApplicationHelper
   end
 
   def get_message_kind
-    "#{params[:controller]}/#{params[:action]}_text"
+    "#{get_sphere}/#{params[:action]}_text"
   end
 
-  def get_body_class
-    params[:controller] == 'crossroads' ? 'crossroads' : nil
+  def get_sphere
+    if params[:controller] == 'crossroads' || params[:controller] == 'lessons' || params[:controller] == 'software'
+      params[:controller]
+    elsif params[:controller] == 'chess' || params[:controller] == 'reservations'
+      'lessons'
+    end
   end
-
 end

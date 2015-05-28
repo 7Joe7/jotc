@@ -2,12 +2,6 @@ footer.navbar.navbar-fixed-bottom.navbar-inverse
   .container
     nav
       ul.nav.navbar-nav.pull-right
-        - if yield(:sphere) == 'Teaching' || yield(:sphere) == 'Chess'
-          li #{link_to 'About', lessons_about_path}
-          li #{link_to 'Contact', lessons_contact_path}
-        - elsif yield(:sphere) == 'Software'
-          li #{link_to 'About', software_about_path}
-          li #{link_to 'Contact', software_contact_path}
-        - else
-          li #{link_to 'About', crossroads_about_path }
-          li #{link_to 'Contact', crossroads_contact_path }
+        - sphere = get_sphere
+        li #{link_to 'About', send("#{sphere}_about_path")}
+        li #{link_to 'Contact', send("#{sphere}_contact_path")}

@@ -8,3 +8,12 @@
   -moz-background-size: cover
   -o-background-size: cover
   background-size: cover
+
+=anchor($color)
+  color: $color
+  &:hover, &:active, &:focus
+    color: darken($color, 30%)
+    text-decoration: none
+    border: none
+    outline: none
+    background-color: transparent

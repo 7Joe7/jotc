@@ -1,9 +1,9 @@
 - provide(:title, 'Links')
-- provide(:sphere, 'Lessons')
 .visible-content
   h4 Chess links
   p #{link_to 'Official Czech Chess Page | chess.cz', 'http://www.chess.cz/www/'}
   p #{link_to 'Chess Tactics training page | chess.emrald.net', 'http://chess.emrald.net/'}
+  p #{link_to 'Nice chess site where you may play and train | lichess.org', 'http://en.lichess.org/'}
   p #{link_to 'List of some chess tournaments in Prague | pss.chess.cz/PSS_KM.HTM', 'http://pss.chess.cz/PSS_KM.HTM'}
   h4 Other
   p #{link_to 'Source of inspiration I dare to say for anybody who finds the time to visit | ted.com/', 'http://www.ted.com/'}
@@ -16,6 +16,6 @@
   /  li #{link_to 'I think a near death experience makes you think kinda the right way.', 'http://www.ted.com/talks/stacey_kramer_the_best_gift_i_ever_survived'}
   /  li #{link_to 'Games are wrong, long live the games!', 'http://www.ted.com/talks/jane_mcgonigal_the_game_that_can_give_you_10_extra_years_of_life'}
   p #{link_to 'Famous website with lots of interesting courses on lots of topics | coursera.org', 'https://www.coursera.org/'}
-  p #{link_to 'Website whose creator held a TED speech | khanacademy.org/', 'https://www.khanacademy.org/'}
+  p #{link_to 'Famous learning website with interactive content | khanacademy.org/', 'https://www.khanacademy.org/'}
   h4 Share
-  p If you know about a page which should be included here, I will be glad if you #{link_to 'write me', '#'}.
+  p If you know about a page which should be included here, #{link_to 'write me', lessons_contact_path}.

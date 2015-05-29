@@ -1,6 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  JOT_CHESS_MAIL = 'josef.erneker@gmail.com'
-  JOT_MAIL = 'jot.company@gmail.com'
+  include ApplicationHelper
   default from: JOT_MAIL
 
   # Subject can be set in your I18n file at config/locales/en.yml

@@ -1,6 +1,6 @@
 class LessonsController < ApplicationController
   def home
-    @news = News.where('sphere % 3 = 0').paginate(page: params[:page])
+    @news = News.where('sphere = 3').paginate(page: params[:page])
   end
 
   def contact

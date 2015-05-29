@@ -11,6 +11,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   BASE_TITLE = 'JOT'
+  BASE_EMAIL = 'jot.company@gmail.com'
 
   def teardown
     Capybara.reset_sessions!

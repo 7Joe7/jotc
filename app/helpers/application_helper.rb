@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   BASE_TITLE = 'JOT'
+  JOT_MAIL = 'jot.company@gmail.com'
 
   def full_title(title)
     sphere = get_sphere.capitalize

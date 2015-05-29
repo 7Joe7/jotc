@@ -8,4 +8,8 @@ class ChessController < ApplicationController
   def tips
 
   end
+
+  def bohemka
+    @news = News.where('sphere = 4').paginate(page: params[:page])
+  end
 end

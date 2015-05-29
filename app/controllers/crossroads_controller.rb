@@ -1,6 +1,6 @@
 class CrossroadsController < ApplicationController
   def home
-    @news = News.paginate(page: params[:page])
+    @news = News.where('sphere = 1').paginate(page: params[:page])
   end
 
   def about

@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'lessons/chess/famous_games' => 'chess#famous_games'
   get 'lessons/chess/tactics' => 'chess#tactics'
   get 'lessons/chess/tips' => 'chess#tips'
+  get 'lessons/chess/bohemka' => 'chess#bohemka'
   get 'lessons/learning_concepts'
 
   get 'software/about'

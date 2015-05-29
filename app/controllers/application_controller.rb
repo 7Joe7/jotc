@@ -22,4 +22,8 @@ class ApplicationController < ActionController::Base
   def message_params
     params.require(:message).permit(:content, :email)
   end
+
+  def message_sphere
+    params.require(:message).permit(:sphere)[:sphere]
+  end
 end

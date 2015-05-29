@@ -1,5 +1,7 @@
 class MessagesController < ApplicationController
 
+  include ApplicationHelper
+
   def new
     get_message
   end
@@ -9,7 +11,8 @@ class MessagesController < ApplicationController
     if @message.save
       @message.send_new_message
       flash[:success] = "Message sent. We'll contact you as soon as we process your message."
-      redirect_to root_url
+      sphere = message_sphere
+      sphere == 'crossroads' ? redirect_to root_url : redirect_to send("#{sphere}_url")
     else
       render 'new'
     end

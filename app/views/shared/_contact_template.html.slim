@@ -18,4 +18,5 @@
           = f.label :email
           = f.text_field :email, class: 'form-control'
         = f.text_area :content, placeholder: 'Compose message...'
+        = f.text_field :sphere, hidden: true, value: get_sphere
         = f.submit 'Post', class: 'btn btn-primary'

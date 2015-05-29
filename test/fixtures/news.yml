@@ -2,10 +2,8 @@
 
 one:
   content: MyString
-  author_id: 
-  comments_id: 
+  author_id:
 
 two:
   content: MyString
-  author_id: 
-  comments_id: 
+  author_id:

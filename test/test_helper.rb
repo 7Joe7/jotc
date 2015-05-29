@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  BASE_TITLE = 'JOTC'
+  BASE_TITLE = 'JOT'
 
   def teardown
     Capybara.reset_sessions!

@@ -6,8 +6,10 @@ module ApplicationHelper
     sphere = get_sphere.capitalize
     if !title.blank? && !sphere.blank?
       "#{BASE_TITLE} | #{sphere} | #{title}"
-    elsif !title.blank? || !sphere.blank?
-      "#{BASE_TITLE} | #{title || sphere}"
+    elsif !title.blank?
+      "#{BASE_TITLE} | #{title}"
+    elsif !sphere.blank?
+      "#{BASE_TITLE} | #{sphere}"
     else
       BASE_TITLE
     end

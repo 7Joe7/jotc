@@ -7,4 +7,5 @@ class News < ActiveRecord::Base
   validates :name, presence: true, length: {maximum: 50}
   validates :content, presence: true
 
+  attr_accessor :collapsed
 end

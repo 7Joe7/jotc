@@ -11,20 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150612205343) do
-
-  create_table "ahoy_events", force: true do |t|
-    t.uuid     "visit_id"
-    t.integer  "user_id"
-    t.string   "name"
-    t.text     "properties"
-    t.datetime "time"
-  end
-
-  add_index "ahoy_events", ["id"], name: "sqlite_autoindex_ahoy_events_1", unique: true
-  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time"
-  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id"
-  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id"
+ActiveRecord::Schema.define(version: 20150614181425) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -80,34 +67,8 @@ ActiveRecord::Schema.define(version: 20150612205343) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "visits", force: true do |t|
-    t.uuid     "visitor_id"
-    t.string   "ip"
-    t.text     "user_agent"
-    t.text     "referrer"
-    t.text     "landing_page"
-    t.integer  "user_id"
-    t.string   "referring_domain"
-    t.string   "search_keyword"
-    t.string   "browser"
-    t.string   "os"
-    t.string   "device_type"
-    t.integer  "screen_height"
-    t.integer  "screen_width"
-    t.string   "country"
-    t.string   "region"
-    t.string   "city"
-    t.string   "postal_code"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.string   "utm_source"
-    t.string   "utm_medium"
-    t.string   "utm_term"
-    t.string   "utm_content"
-    t.string   "utm_campaign"
-    t.datetime "started_at"
+    t.string "ip"
+    t.string "page"
   end
-
-  add_index "visits", ["id"], name: "sqlite_autoindex_visits_1", unique: true
-  add_index "visits", ["user_id"], name: "index_visits_on_user_id"
 
 end

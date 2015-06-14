@@ -15,7 +15,6 @@ gem 'jbuilder'
 gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
-gem 'ahoy_matey'
 gem 'sdoc', group: :doc
 
 group :test do
@@ -34,7 +33,6 @@ end
 
 group :development, :test do
   gem 'factory_girl_rails'
-  gem 'activeuuid', '>= 0.5.0'
 end
 
 group :production do

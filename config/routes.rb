@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get 'software' => 'software#home'
   get 'software/contact'
   post 'software/contact'
-  get 'software/examples'
+  get 'software/alfred_workflows'
 
   get 'password_resets/new'
   get 'password_resets/edit'

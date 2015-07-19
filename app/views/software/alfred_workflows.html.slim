@@ -1,0 +1,22 @@
+- provide(:title, 'Alfred Workflows')
+.visible-content
+  h4 Alfred
+  p #{link_to 'Alfred', 'http://www.alfredapp.com/'} is a very nice productivity app for Mac users. It allows you to very quickly (through keyboard shortcuts) govern your computer.
+    What's best about it is that it allows you to program and set up your own workflows quite easily and use them yet more easily.
+    It has a nice #{link_to 'community', 'http://www.alfredforum.com/forum/3-share-your-workflows/'} where these workflows are shared.
+    This ability, so called PowerPack is paid for. Anyway I consider it well worth it.
+  p After pressing keyboard shortcut a navigator for Alfred (it works similarly to Spotlight) comes up in the middle of screen.
+    As you type it offers you appropriate options:
+  p.center #{ image_tag 'alfred.jpg', alt: 'Alfred' }
+  p It serves me since the beginning of 2015.
+  h4 Workflows
+  p Here are some workflows from me. First published is for access to Stash. It lists all repositories for specified domain and user:
+  p.center #{ image_tag 'stashworkflow.jpg', alt: 'Stash Workflow' }
+  p It provides easy access to repos based on string matching. After click it opens the repo in your default browser.
+    It has its own cash so it is fast after the first time, the cache is easily refreshable and a recommendation is to
+    set Automator to refresh it every week (by adding an Calendar alarm through automator which will call the flow which
+    is prepared in the workflow).
+  p It is posted on #{ link_to 'Alfred forums', 'http://www.alfredforum.com/topic/6018-stash-workflow/' }
+    and you may also download it #{ link_to 'here', 'https://jotc.herokuapp.com/assets/data/stash.alfredworkflow' }.
+  p Guidance is provided in readme. (You may access readme by importing into Alfred, then right-clicking on the workflow
+    in workflows screen, then choose 'Edit Details' and click on 'Readme' tab.)

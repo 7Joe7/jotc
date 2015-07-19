@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614181425) do
+ActiveRecord::Schema.define(version: 20150719120647) do
 
   create_table "messages", force: true do |t|
     t.text     "content"
@@ -67,8 +67,9 @@ ActiveRecord::Schema.define(version: 20150614181425) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
   create_table "visits", force: true do |t|
-    t.string "ip"
-    t.string "page"
+    t.string   "ip"
+    t.string   "page"
+    t.datetime "created_at"
   end
 
 end

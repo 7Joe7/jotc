@@ -1,18 +1,9 @@
 - provide(:title, 'About')
 .visible-content
-  h4 Welcome!
-  p We are glad that you have found our site.
-
-  p JOT is so far a project which includes teaching activities and writing custom-made software.
-  p The vision is to provide services which we believe will serve people well. The fields are selected due to skills
-    we possess so far. It may change in time.
-  p It was created by Josef Erneker and is supported by Tasya Kishenko.
-  p Our goals are to create something which we would consider useful generally, to govern ourselves, to allow us to do what we enjoy doing.
+  == render 'shared/welcome_text'
+  p JOT is so far a project which includes teaching activities and coding custom-made software.
+  p The vision is to provide services which will serve people well.
   p Coaching in fields like chess or possibly computer science, basic school matters, math, physics,
     #{link_to('here', lessons_path)}.
-  p Custom-made software, #{link_to 'here', software_path}.
-  p If you have any question, idea to share, feedback, demand, offer anything we would possibly like
-    to know, #{link_to 'contact us', crossroads_contact_path}.
-  p We welcome any kind of #{link_to 'feedback', crossroads_contact_path} - positive, negative (we consider very
-    important to get to know what you think about this).
-  p If you find any bug here, minor or major, please, don't hesitate to #{link_to 'report it', crossroads_contact_path}.
+  p Coding custom-made software, #{link_to 'here', software_path}.
+  p Please, don't hesitate to #{link_to 'share', crossroads_contact_path} your ideas, questions, offers, demands bug findings or other feedback.

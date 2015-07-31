@@ -1,3 +1,7 @@
+require 'downloads_helper'
+
+include DownloadsHelper
+
 Rails.application.routes.draw do
 
   root 'crossroads#home'
@@ -36,6 +40,10 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+
+  FILES_TO_DOWNLOAD.each do |file|
+    get "assets/#{file}" => "downloads##{file.gsub('.', '_')}"
+  end
 
   resources :users
   resources :account_activations, only: [:edit]

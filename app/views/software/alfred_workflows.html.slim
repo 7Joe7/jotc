@@ -9,14 +9,62 @@
     As you type it offers you appropriate options:
   p.center #{ image_tag 'alfred.png', alt: 'Alfred' }
   p It serves me since the beginning of 2015.
-  h4 Workflows
-  p Here are some workflows from me. First published is for access to Stash. It lists all repositories for specified domain and user:
+  h4 Stash Workflow
+  p It lists all repositories for specified domain and user:
   p.center #{ image_tag 'stashworkflow.png', alt: 'Stash Workflow' }
   p It provides easy access to repos based on string matching. After click it opens the repo in your default browser.
     It has its own cash so it is fast after the first time, the cache is easily refreshable and a recommendation is to
-    set Automator to refresh it every week (by adding an Calendar alarm through automator which will call the flow which
+    set Automator to refresh it every week (by adding an Calendar alarm through Automator which will call the flow which
     is prepared in the workflow).
   p It is posted on #{ link_to 'Alfred forums', 'http://www.alfredforum.com/topic/6018-stash-workflow/' }
     and you may also download it #{ link_to 'here', 'https://jotc.herokuapp.com/assets/stash.alfredworkflow' }.
   p Guidance is provided in readme. (You may access readme by importing into Alfred, then right-clicking on the workflow
     in workflows screen, then choose 'Edit Details' and click on 'Readme' tab.)
+  h4 Asana Workflow#{link_to '', '', name: 'asana_workflow'}
+  p This is an advanced workflow. It integrates features of
+    #{ link_to 'Asana', 'https://app.asana.com'},
+    #{ link_to 'GTD', 'https://en.wikipedia.org/wiki/Getting_Things_Done' },
+    #{ link_to 'AnyBar fork on Github', 'https://github.com/7Joe7/AnyBar' },
+    #{ link_to 'Atlassian Jira', 'https://www.atlassian.com/software/jira' },
+    and Mac alone to enhance the experience of everyday planning, self management and motivation.
+  p It allows you to work with your tasks locally without accessing Asana through Alfred.
+    It allows to synchronise Asana and Jira. Provides support for GTD principles in Asana. Provides extremely powerful
+    way to log work and keep in mind tasks which are due using AnyBar. Allows to use computer as a motivating factor every day.
+    The basic online operations (create, delete, logging) are cached when you are offline and posted when you get online.
+  p Probably the most useful part looks like this:
+  p.center #{ image_tag 'asanaworkflow.png', alt: 'Asana Workflow' }
+  p I strongly recommend #{ link_to 'Modified AnyBar', software_modified_anybar_path } because it has enhanced features specifically designed for this workflow and it looks coooool.
+  p It is posted on #{ link_to 'Alfred forums', 'http://www.alfredforum.com/topic/6018-stash-workflow/' }
+    and you may also download it #{ link_to 'here', 'https://jotc.herokuapp.com/assets/asana.alfredworkflow' }.
+  p Guidance is provided in readme. (You may access readme by importing into Alfred, then right-clicking on the workflow
+    in workflows screen, then choose 'Edit Details' and click on 'Readme' tab.)
+  p Here is a list of use cases:
+  ul
+    - SoftwareHelper::ASANA_FUNCTIONALITY_USE_CASES.each do |use_case|
+      li #{ link_to use_case[:title], "##{use_case[:link_name]}" }
+  p Use cases meant to be run at startup or regularly by calendar event and Automator:
+  ul
+    - SoftwareHelper::ASANA_STARTUP_USE_CASES.each do |use_case|
+      li #{ link_to use_case[:title], "##{use_case[:link_name]}" }
+  p Setup use cases:
+  ul
+    - SoftwareHelper::ASANA_SETUP_USE_CASES.each do |use_case|
+      li #{ link_to use_case[:title], "##{use_case[:link_name]}" }
+  - all_use_cases.each do |use_case|
+    h5 #{link_to '', '', name: use_case[:link_name]}#{use_case[:title]}
+    - if use_case[:keyword]
+      p Keyword: <i>#{ use_case[:keyword] }</i>
+    - if use_case[:pick_from]
+      p Pick from a list showed by keyword: <i>#{ use_case[:pick_from] }</i>
+    - if use_case[:show_from_shortcut]
+      p Show the list keyboard shortcut: <i>#{ use_case[:show_from_shortcut] }</i>
+    - if use_case[:keyboard_shortcut]
+      p Keyboard shortcut: <i>#{ use_case[:keyboard_shortcut] }</i>
+    - if use_case[:input_format]
+      p Input format: <i>#{ use_case[:input_format] }</i>
+    - if use_case[:call_by]
+      p Call by: <i>#{ use_case[:call_by] }</i>
+    - if use_case[:keyboard_modifier]
+      p Keyboard modifier: <i>#{ use_case[:keyboard_modifier] }</i>
+    - use_case[:description].each do |description|
+      p #{description.gsub(/LINK\(text='(.+)',address='(.+)'\)/, link_to('\1', '\2')).html_safe}

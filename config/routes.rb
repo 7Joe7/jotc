@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get 'software/contact'
   post 'software/contact'
   get 'software/alfred_workflows'
+  get 'software/modified_anybar'
 
   get 'password_resets/new'
   get 'password_resets/edit'

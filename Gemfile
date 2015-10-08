@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 gem 'rails', '4.1.5'
 gem 'bcrypt'
 gem 'slim'

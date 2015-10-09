@@ -4,6 +4,8 @@ include DownloadsHelper
 
 Rails.application.routes.draw do
 
+  get 'news_controller/create'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'crossroads#home'

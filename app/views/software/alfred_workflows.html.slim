@@ -51,7 +51,8 @@
     - SoftwareHelper::ASANA_SETUP_USE_CASES.each do |use_case|
       li #{ link_to use_case[:title], "##{use_case[:link_name]}" }
   - all_use_cases.each do |use_case|
-    h5 #{link_to '', '', name: use_case[:link_name]}#{use_case[:title]}
+    p #{link_to '', '', name: use_case[:link_name], class: 'named-link'}
+    h5 #{use_case[:title]}
     - if use_case[:keyword]
       p Keyword: <i>#{ use_case[:keyword] }</i>
     - if use_case[:pick_from]

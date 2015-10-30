@@ -21,9 +21,13 @@ module ApplicationHelper
   end
 
   def get_sphere
-    if params[:controller] == 'crossroads' || params[:controller] == 'lessons' || params[:controller] == 'software'
-      params[:controller]
-    elsif params[:controller] == 'chess' || params[:controller] == 'reservations'
+    get_sphere_from(:controller) || get_sphere_from(:from_controller)
+  end
+
+  def get_sphere_from(param)
+    if params[param] == 'crossroads' || params[param] == 'lessons' || params[param] == 'software'
+      params[param]
+    elsif params[param] == 'chess' || params[param] == 'reservations'
       'lessons'
     end
   end

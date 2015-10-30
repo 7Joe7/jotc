@@ -8,21 +8,24 @@ class SessionsController < ApplicationController
       if @user.activated?
         log_in @user
         params[:session][:remember_me] == '1' ? remember(@user) : forget(@user)
-        redirect_back_or @user
+        redirect_back_or params[:session][:from_url]
+        params[:session].delete(:from_url)
       else
         message  = 'Account not activated. '
         message += 'Check your email for the activation link.'
         flash[:warning] = message
-        redirect_to root_url
+        redirect_to params[:session][:from_url]
+        params[:session].delete(:from_url)
       end
     else
-      flash.now[:danger] = 'Invalid email/password combination'
-      render 'new'
+      flash[:danger] = 'Invalid email/password combination'
+      redirect_to params[:session][:from_url]
+      params[:session].delete(:from_url)
     end
   end
 
   def destroy
     log_out if logged_in?
-    redirect_to root_url
+    redirect_to params[:from_url]
   end
 end

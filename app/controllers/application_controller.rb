@@ -23,6 +23,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_user
+    @user = current_user || User.new
+  end
+
   def get_message
     @message = logged_in? ? current_user.messages.build : Message.new
   end

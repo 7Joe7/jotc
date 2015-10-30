@@ -11,13 +11,15 @@ Rails.application.routes.draw do
   root 'crossroads#home'
   get 'crossroads/about'
   get 'crossroads/contact'
-  post 'crossroads/contact'
+  post 'crossroads/contact' => 'crossroads#create_message'
+  get 'crossroads/signup'
+  post 'crossroads/signup' => 'crossroads#create_user'
 
   get 'lessons' => 'lessons#home'
   get 'lessons/links'
   get 'lessons/about'
   get 'lessons/contact'
-  post 'lessons/contact'
+  post 'lessons/contact' => 'lessons#create_message'
   get 'lessons/reservations' => 'reservations#new'
   post 'lessons/reservations' => 'reservations#create'
   delete 'lessons/reservations' => 'reservations#destroy'
@@ -28,21 +30,23 @@ Rails.application.routes.draw do
   get 'lessons/chess/tips' => 'chess#tips'
   get 'lessons/chess/bohemka' => 'chess#bohemka'
   get 'lessons/learning_concepts'
+  get 'lessons/signup'
+  post 'lessons/signup' => 'lessons#create_user'
 
   get 'software/about'
   get 'software' => 'software#home'
   get 'software/contact'
-  post 'software/contact'
+  post 'software/contact' => 'software#create_message'
   get 'software/alfred_workflows'
   get 'software/modified_anybar'
   get 'software/rails_app'
+  get 'software/signup'
+  post 'software/signup' => 'software#create_user'
 
   get 'password_resets/new'
   get 'password_resets/edit'
   get 'account_activations/edit'
   get 'sessions/new'
-  get 'signup' => 'users#new'
-  post 'signup' => 'users#create'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
@@ -50,10 +54,8 @@ Rails.application.routes.draw do
     get "assets/#{file}" => "downloads##{file.gsub('.', '_')}"
   end
 
-  resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :messages, only: [:new, :create, :destroy]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

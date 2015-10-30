@@ -7,11 +7,34 @@ class ApplicationController < ActionController::Base
 
   private
 
+  # VISITS
+
   def log_visit
     v = Visit.new
     v.page = "#{params[:controller]} - #{params[:action]}"
     v.ip = request.remote_ip
     v.save
+  end
+
+  # USERS
+
+  def get_new_user
+    @user = User.new
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def create_new_user(redirect_to)
+    @user = User.new(user_params)
+    if @user.save
+      @user.send_activation_email
+      flash[:info] = 'Please check your email to activate your account.'
+      redirect_to redirect_to
+    else
+      render 'signup'
+    end
   end
 
   # Confirms a logged-in user.
@@ -23,9 +46,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def get_user
-    @user = current_user || User.new
-  end
+  # MESSAGES
 
   def get_message
     @message = logged_in? ? current_user.messages.build : Message.new
@@ -33,6 +54,18 @@ class ApplicationController < ActionController::Base
 
   def message_params
     params.require(:message).permit(:content, :email)
+  end
+
+  def create_new_message(redirect_to)
+    @message = logged_in? ? current_user.messages.build(message_params) : Message.new(message_params)
+    if @message.save
+      @message.send_new_message
+      flash[:success] = "Message sent. We'll contact you as soon as we process your message."
+      sphere = message_sphere
+      sphere == 'crossroads' ? redirect_to(redirect_to) : redirect_to(send("#{sphere}_url"))
+    else
+      render 'contact'
+    end
   end
 
   def message_sphere

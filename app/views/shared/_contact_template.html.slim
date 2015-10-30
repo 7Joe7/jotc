@@ -8,7 +8,7 @@
       p.double-tabbed Email: jot.company@gmail.com
       p.double-tabbed Mobile: +420 723 172 832
     section.pull-right.visible-content.contact-form
-      = form_for(@message) do |f|
+      = form_for(@message, url: send("#{get_sphere}_contact_path")) do |f|
         = render 'shared/error_messages', object: f.object
         .field
         - if logged_in?

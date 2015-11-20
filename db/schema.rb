@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008184502) do
+ActiveRecord::Schema.define(version: 20151102163124) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -99,10 +99,7 @@ ActiveRecord::Schema.define(version: 20151008184502) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
-  create_table "visits", force: true do |t|
-    t.string   "ip"
-    t.string   "page"
-    t.datetime "created_at"
-  end
+# Could not dump table "visits" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end

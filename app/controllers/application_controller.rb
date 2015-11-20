@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
     v = Visit.new
     v.page = "#{params[:controller]} - #{params[:action]}"
     v.ip = request.remote_ip
+    v.user_id = current_user.id
     v.save
   end
 

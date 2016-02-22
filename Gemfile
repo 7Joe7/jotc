@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.4'
+
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'rails', '4.1.5'
